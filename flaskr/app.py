@@ -48,6 +48,7 @@ def blog(title):
 def executePull():
 	# testing remote git pull
 	try:
+		return subprocess.Popen(['/home/ubuntu/mon','ls'], shell=False, stdout=subprocess.PIPE).stdout.read()
 		return subprocess.Popen('sudo git pull', shell=False, stdout=subprocess.PIPE).stdout.read()
 	except Exception as ex:
 		return 'exception: ' + str(ex)
