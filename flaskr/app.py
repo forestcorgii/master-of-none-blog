@@ -1,10 +1,12 @@
 from pathlib import Path
 from flask import Flask, render_template
-import markdown2
-import re
-import subprocess
+import markdown2, os, re, subprocess
 
 app = Flask(__name__)
+
+blogs_dir = "static/mon/blogs"
+if not os.path.exists(blogs_dir):
+	blogs_dir = 'flaskr/static/mon/blogs'
 
 # Custom function to handle [[link]] and ![[link]]
 def preprocess_custom_links(markdown_text):
@@ -22,16 +24,14 @@ def preprocess_custom_links(markdown_text):
 	return markdown_text
 
 @app.route("/")
-def homepage():
-	
-	blogs_dir = "static/mon/blogs"
+def homepage():	
 	blogs = [f.name for f in Path(blogs_dir).iterdir() if f.is_file()]
 		
 	return render_template("homepage.html",title="my humpage", blogs=blogs)
 
 @app.route("/blogs/<title>", methods=["GET"])
 def blog(title):
-	with open(f"static/mon/blogs/{title}", 'r', encoding='utf8') as file:
+	with open(f"{blogs_dir}/{title}", 'r', encoding='utf8') as file:
 		file_content = file.read()
 
 	# Preprocess the custom markdown syntax

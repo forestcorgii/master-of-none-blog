@@ -6,3 +6,7 @@ body {
 	font-style: normal;
 }
 
+img {
+	object-fit: scale-down;
+	width: 100%;
+}
