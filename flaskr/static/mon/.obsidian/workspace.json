@@ -4,31 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "85653225aa4a1a1f",
+        "id": "77d6fa7e48f262c4",
         "type": "tabs",
         "children": [
           {
-            "id": "11d74536ef4200dc",
+            "id": "5d34c3ca2129d5bf",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "blogs/love-from-the-ground-up.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0ebface72ff260fe",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "blogs/Testing New Blog.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -97,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blogs/love-from-the-ground-up.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blogs/love-from-the-ground-up.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "blogs/love-from-the-ground-up.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -159,12 +139,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "11d74536ef4200dc",
+  "active": "5d34c3ca2129d5bf",
   "lastOpenFiles": [
-    "blogs/SWIFT-5659.md",
-    "blogs/love-from-the-ground-up.md",
-    "attachments/SWIFT-5659-image.png",
     "blogs/Testing New Blog.md",
+    "blogs/love-from-the-ground-up.md",
+    "blogs/SWIFT-5659.md",
+    "attachments/SWIFT-5659-image.png",
     "attachments/Testing New Blog--1.png",
     "attachments/Testing New Blog-.png",
     "attachments",
