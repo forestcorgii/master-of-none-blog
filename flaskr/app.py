@@ -47,5 +47,7 @@ def blog(title):
 @app.route('/pull')
 def executePull():
 	# testing remote git pull
-	return subprocess.Popen('sudo git pull', shell=False, stdout=subprocess.PIPE).stdout.read()
-
+	try:
+		return subprocess.Popen('sudo git pull', shell=False, stdout=subprocess.PIPE).stdout.read()
+	except Exception as ex:
+		return 'exception: ' + str(ex)
