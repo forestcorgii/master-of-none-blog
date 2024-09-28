@@ -46,5 +46,6 @@ def blog(title):
 
 @app.route('/pull')
 def executePull():
+	# testing remote git pull
 	return subprocess.Popen('git pull', shell=False, stdout=subprocess.PIPE).stdout.read()
 
