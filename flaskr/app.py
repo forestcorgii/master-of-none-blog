@@ -24,14 +24,14 @@ def preprocess_custom_links(markdown_text):
 @app.route("/")
 def homepage():
 	
-	blogs_dir = "./flaskr/static/mon/blogs"
+	blogs_dir = "static/mon/blogs"
 	blogs = [f.name for f in Path(blogs_dir).iterdir() if f.is_file()]
 		
 	return render_template("homepage.html",title="my humpage", blogs=blogs)
 
 @app.route("/blogs/<title>", methods=["GET"])
 def blog(title):
-	with open(f"./flaskr/static/mon/blogs/{title}", 'r', encoding='utf8') as file:
+	with open(f"static/mon/blogs/{title}", 'r', encoding='utf8') as file:
 		file_content = file.read()
 
 	# Preprocess the custom markdown syntax
