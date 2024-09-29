@@ -54,7 +54,7 @@ def executePull():
 			
 		print('testing')
 		os.chdir(repo_dir)
-		subprocess.run(['sudo', 'git', 'pull'], check=True)
+		subprocess.run(['git', 'pull'], check=True)
 		return 'success ' + '200'
 	
 	except Exception as ex:
