@@ -47,15 +47,15 @@ def blog(title):
 @app.route('/pull')
 def executePull():
 	# testing remote git pull
+	repo_dir = '/home/ubuntu/mon'
 	try:
-		repo_dir = '/home/ubuntu/mon'
 		if not os.path.exists(repo_dir):
-			repo_dir = '/home/sean/mon'
-		print('testing')
+			repo_dir = '/home/sean/workspace/mon'
+			
 		os.chdir(repo_dir)
 		subprocess.run(['git', 'pull'], check=True)
-		return 'success', 400
+		return 'success ' + 400
 		# return subprocess.Popen(['/home/ubuntu/mon','ls'], shell=False, stdout=subprocess.PIPE).stdout.read()
 		# return subprocess.Popen('sudo git pull', shell=False, stdout=subprocess.PIPE).stdout.read()
 	except Exception as ex:
-		return 'exception: ' + str(ex)
+		return 'exception: '+ repo_dir + str(ex)
