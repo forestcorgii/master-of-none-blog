@@ -44,18 +44,14 @@ def blog(title):
 
 	return render_template("blog.html", title=new_title, message=converted_content)
 
-@app.route('/pull')
-def executePull():
+@app.route('/webhook', methods=['POST'])
+def webhook():
 	# testing remote git pull
 	repo_dir = '/home/ubuntu/mon'
 	try:
-		if not os.path.exists(repo_dir):
-			repo_dir = '/home/sean/workspace/mon'
-			
-		print('testing')
 		os.chdir(repo_dir)
 		subprocess.run(['sudo', '-u', 'www-data', 'git', 'pull'], check=True)		
-		return 'success ' + '200'
+		return 'success', 200
 	
 	except Exception as ex:
-		return 'Repo Directory: '+ repo_dir + ' failed: ' + str(ex)
+		return 'Repo Directory: '+ repo_dir + ' failed: ' + str(ex), 400
