@@ -52,6 +52,7 @@ def executePull():
 		if not os.path.exists(repo_dir):
 			repo_dir = '/home/sean/workspace/mon'
 			
+		print('testing')
 		os.chdir(repo_dir)
 		subprocess.run(['git', 'pull'], check=True)
 		return 'success ' + 400
