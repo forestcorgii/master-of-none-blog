@@ -55,8 +55,7 @@ def executePull():
 		print('testing')
 		os.chdir(repo_dir)
 		subprocess.run(['git', 'pull'], check=True)
-		return 'success ' + 400
-		# return subprocess.Popen(['/home/ubuntu/mon','ls'], shell=False, stdout=subprocess.PIPE).stdout.read()
-		# return subprocess.Popen('sudo git pull', shell=False, stdout=subprocess.PIPE).stdout.read()
+		return 'success ' + '200'
+	
 	except Exception as ex:
 		return 'exception: '+ repo_dir + str(ex)
