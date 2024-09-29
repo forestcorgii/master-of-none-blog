@@ -58,4 +58,4 @@ def executePull():
 		return 'success ' + '200'
 	
 	except Exception as ex:
-		return 'exception: '+ repo_dir + str(ex)
+		return 'Repo Directory: '+ repo_dir + ' failed: ' + str(ex)
