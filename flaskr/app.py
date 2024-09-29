@@ -51,6 +51,7 @@ def webhook():
 	try:
 		os.chdir(repo_dir)
 		subprocess.run(['sudo', '-u', 'www-data', 'git', 'pull'], check=True)		
+		subprocess.run(['sudo', '-u', 'www-data', 'systemctl', 'restart','mon'], check=True)		
 		return 'success', 200
 	
 	except Exception as ex:
