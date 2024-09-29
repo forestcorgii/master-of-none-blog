@@ -4,7 +4,7 @@ import markdown2, os, re, subprocess
 
 app = Flask(__name__)
 
-blogs_dir = "static/blogs"
+blogs_dir = "/home/ubuntu/mon/flaskr/static/blogs"
 if not os.path.exists(blogs_dir):
 	blogs_dir = 'flaskr/static/blogs'
 
