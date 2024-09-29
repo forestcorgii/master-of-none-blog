@@ -4,15 +4,15 @@ import markdown2, os, re, subprocess
 
 app = Flask(__name__)
 
-blogs_dir = "static/mon/blogs"
+blogs_dir = "static/blogs"
 if not os.path.exists(blogs_dir):
-	blogs_dir = 'flaskr/static/mon/blogs'
+	blogs_dir = 'flaskr/static/blogs'
 
 # Custom function to handle [[link]] and ![[link]]
 def preprocess_custom_links(markdown_text):
 	# Convert ![[image]] to standard markdown image syntax ![alt_text](image_path)
 	if '.png' in markdown_text:
-		markdown_text = re.sub(r'!\[\[(.*?)\]\]', r'![\1](/static/mon/attachments/\1)', markdown_text)
+		markdown_text = re.sub(r'!\[\[(.*?)\]\]', r'![\1](/static/attachments/\1)', markdown_text)
 	else:
 		markdown_text = re.sub(r'!\[\[(.*?)\]\]', r'![\1](/static/\1)', markdown_text)
 	# Convert ![[link]] to standard markdown image syntax ![alt_text](link)
